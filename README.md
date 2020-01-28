@@ -25,12 +25,14 @@ A aplicação está configurada para utilizar o IP default do Docker no Windows 
 ```
 
 ## Inicialização
-Para iniciar a aplicação, é preciso iniciar o container do MySQL primeiro. Basta rodar os seguintes comandos nesta ordem:
+Para iniciar a aplicação, é preciso iniciar o container do MySQL primeiro. Basta rodar os seguintes comandos nesta ordem.
+
+A partir da raiz da aplicação, navegue para a pasta "/docker_mysql" e execute os comandos para gerar e inicializar o container do docker.
 ```bash
   docker build --tag keycash-mysql-image .
   docker run -d --rm -p 3306:3306 --name keycash-mysql keycash-mysql-image
 ```
-Na sequencia, basta iniciar o container do nodejs.
+Na sequencia, volte para a raiz da aplicação e inicie o container do nodejs.
 
 ```bash
   docker build -t keycash-node-image .
